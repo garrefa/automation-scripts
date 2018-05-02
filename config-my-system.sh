@@ -33,19 +33,9 @@ cat << "EOF"
 
 EOF
 
-# Helper function to check whether a command is present
-function isInstalled() {
-    LOCATION=$(which $1)
-    # -z: returns True of the length if "STRING" is zero.
-    if [ -z $LOCATION ]; then
-        return 0
-    fi
-    return 1
-}
-
 # Install homebrew
-isInstalled brew
-if [ $(echo $?) == 0 ]; then
+which brew >> /dev/null
+if [ $(echo $?) == 1 ]; then
     echo "Installing homebrew..."
     echo $LINE
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
