@@ -12,12 +12,14 @@
 
 Usefull scripts to automate a first time macOS setup.
 
-Run *config-my-system.sh* to:
----
+## config-my-system.sh
+
  - Install homebrew
  - Run brew doctor
  - Run brew update
  - Install coreutils
+ - Install swiftlint
+ - Install swiftgen
  - Install rbenv
  - Add load rbenv code to .bash_profile, .profile and .zshrc
  - Install ruby version set at RUBY_VERSION
@@ -30,5 +32,6 @@ Run *config-my-system.sh* to:
     - Install slather
     - Install xcpretty
 
-Run *install-gitlab-runned.sh if you need get gitlab-runner installed and registered in your machine.
----
+## install-gitlab-runned.sh
+
+If you need get gitlab-runner installed and registered in your machine.

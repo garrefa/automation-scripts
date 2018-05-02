@@ -64,6 +64,20 @@ if [ $(echo $?) == 1 ]; then
     brew install coreutils
 fi
 
+brew list|grep swiftlint >> /dev/null
+if [ $(echo $?) == 1 ]; then
+    echo "Installing swiftlint..."
+    echo $LINE
+    brew install swiftlint
+fi
+
+brew list|grep swiftgen >> /dev/null
+if [ $(echo $?) == 1 ]; then
+    echo "Installing swiftgen..."
+    echo $LINE
+    brew install swiftgen
+fi
+
 # Install rbenv
 brew list|grep rbenv >> /dev/null
 if [ $(echo $?) == 1 ]; then
