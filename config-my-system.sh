@@ -105,4 +105,14 @@ echo "If you want to set a specific ruby version in some repository"
 echo "run: rbenv local (VERSION), ex: rbenv local 2.5.1"
 echo $LINE"\n"
 
+echo "\nInstalling bundler (https://bundler.io/)"
+echo $LINE
+gem install bundler
+
+echo "\nInstalling required dependencies"
+echo $LINE
+cat Gemfile | grep ^gem | cut -d \' -f 2
+echo
+bundle install
+
 exit 0
