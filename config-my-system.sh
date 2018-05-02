@@ -1,4 +1,16 @@
 #!/bin/sh
+
+# This script will:
+# - Install homebrew
+# - Run brew doctor
+# - Run brew update
+# - Install coreutils
+# - Install rbenv
+# - Add load rbenv code to .bash_profile, .profile and .zshrc
+# - Install ruby version set at RUBY_VERSION
+# - Set new installed ruby version as global ruby version for rbenv
+# - Verify that rbenv is properly set up
+
 IFS=$'\n'
 # set -x
 
@@ -8,14 +20,14 @@ cat << "EOF"
 
 
 
- _____              __ _        ___  ___        _____           _                 
-/  __ \            / _(_)       |  \/  |       /  ___|         | |                
-| /  \/ ___  _ __ | |_ _  __ _  | .  . |_   _  \ `--. _   _ ___| |_ ___ _ __ ___  
-| |    / _ \| '_ \|  _| |/ _` | | |\/| | | | |  `--. \ | | / __| __/ _ \ '_ ` _ \ 
+ _____              __ _        ___  ___        _____           _
+/  __ \            / _(_)       |  \/  |       /  ___|         | |
+| /  \/ ___  _ __ | |_ _  __ _  | .  . |_   _  \ `--. _   _ ___| |_ ___ _ __ ___
+| |    / _ \| '_ \|  _| |/ _` | | |\/| | | | |  `--. \ | | / __| __/ _ \ '_ ` _ \
 | \__/\ (_) | | | | | | | (_| | | |  | | |_| | /\__/ / |_| \__ \ ||  __/ | | | | |
  \____/\___/|_| |_|_| |_|\__, | \_|  |_/\__, | \____/ \__, |___/\__\___|_| |_| |_|
-                          __/ |          __/ |         __/ |                      
-                         |___/          |___/         |___/                       
+                          __/ |          __/ |         __/ |
+                         |___/          |___/         |___/
 
 
 
