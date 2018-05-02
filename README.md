@@ -26,6 +26,7 @@ Run *config-my-system.sh* to:
  - Install bundler
  - Run bundler install
     - Install cocoapods
+    - Install fastlane
     - Install slather
     - Install xcpretty
 
