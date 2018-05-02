@@ -10,6 +10,8 @@
 # - Install ruby version set at RUBY_VERSION
 # - Set new installed ruby version as global ruby version for rbenv
 # - Verify that rbenv is properly set up
+# - Install bundler
+# - Run bundler install to install all dependencies in Gemfile
 
 IFS=$'\n'
 # set -x
