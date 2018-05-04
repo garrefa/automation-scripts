@@ -10,9 +10,9 @@
 
 ```
 
-Usefull scripts to automate a first time macOS setup.
-
 ## config-my-system.sh
+
+Usefull script to automate a first time macOS setup.
 
  - Install homebrew
  - Run brew doctor
@@ -36,7 +36,7 @@ Usefull scripts to automate a first time macOS setup.
 
 ## install-gitlab-runned.sh
 
-If you need get gitlab-runner installed and registered in your machine.
+If you need to get gitlab-runner installed and registered in your machine.
 
 ## remove-xcode-template-headers.sh
 
