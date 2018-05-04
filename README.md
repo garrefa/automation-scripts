@@ -18,6 +18,8 @@ Usefull scripts to automate a first time macOS setup.
  - Run brew doctor
  - Run brew update
  - Install coreutils
+ - Install bash updated version
+ - Install git updated version
  - Install swiftlint
  - Install swiftgen
  - Install rbenv

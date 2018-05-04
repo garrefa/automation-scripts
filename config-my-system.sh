@@ -5,6 +5,8 @@
 # - Run brew doctor
 # - Run brew update
 # - Install coreutils
+# - Install bash updated version
+# - Install git updated version
 # - Install rbenv
 # - Add load rbenv code to .bash_profile, .profile and .zshrc
 # - Install ruby version set at RUBY_VERSION
@@ -34,7 +36,6 @@ cat << "EOF"
 
 EOF
 
-# Install homebrew
 which brew >> /dev/null
 if [ $(echo $?) == 1 ]; then
     echo "Installing homebrew..."
@@ -42,7 +43,6 @@ if [ $(echo $?) == 1 ]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-# Make sure brew is working ok
 echo "Making sure you are ready to brew..."
 echo $LINE
 brew doctor
@@ -51,35 +51,46 @@ if [ $(echo $?) != 0 ]; then
     return $?
 fi
 
-# Update brew
 echo "\nUpdating brew..."
 echo $LINE
 brew update
 
-# Install coreutils
-brew list|grep coreutils >> /dev/null
+brew list coreutils >> /dev/null
 if [ $(echo $?) == 1 ]; then
     echo "Installing coreutils..."
     echo $LINE
     brew install coreutils
 fi
 
-brew list|grep swiftlint >> /dev/null
+brew list bash >> /dev/null
+if [ $(echo $?) == 1 ]; then
+    echo "Installing updated bash..."
+    echo $LINE
+    brew install bash
+fi
+
+brew list git >> /dev/null
+if [ $(echo $?) == 1 ]; then
+    echo "Installing updated git..."
+    echo $LINE
+    brew install git
+fi
+
+brew list swiftlint >> /dev/null
 if [ $(echo $?) == 1 ]; then
     echo "Installing swiftlint..."
     echo $LINE
     brew install swiftlint
 fi
 
-brew list|grep swiftgen >> /dev/null
+brew list swiftgen >> /dev/null
 if [ $(echo $?) == 1 ]; then
     echo "Installing swiftgen..."
     echo $LINE
     brew install swiftgen
 fi
 
-# Install rbenv
-brew list|grep rbenv >> /dev/null
+brew list rbenv >> /dev/null
 if [ $(echo $?) == 1 ]; then
     echo "Installing rbenv..."
     echo $LINE
