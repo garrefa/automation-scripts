@@ -28,7 +28,7 @@ LINE="==========================================================================
 removeHeaders() {
     sudo find -E $1 -type f \
         \( -regex '.*\.[chm]' -or -regex '.*\.swift' \) \
-        -exec sed -i '' '1,/^$/d' '{}' ';'
+        -exec /usr/bin/sed -i '' '1,/^$/d' '{}' ';'
 }
 
 removeHeaders "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates"
