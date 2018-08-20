@@ -5,8 +5,8 @@
 # - Run brew doctor
 # - Run brew update
 # - Install coreutils
-# - Install bash updated version
-# - Install git updated version
+# - Install bash updated version (4.*)
+# - Install git updated version (2.7)
 # - Install rbenv
 # - Add load rbenv code to .bash_profile, .profile and .zshrc
 # - Install ruby version set at RUBY_VERSION

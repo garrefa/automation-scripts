@@ -13,11 +13,11 @@ IFS=$'\n'
 
 LINE="=============================================================================="
 
-brew list bash-completion >> /dev/null
+brew list bash-completion@2 >> /dev/null
 if [ $(echo $?) == 1 ]; then
     echo "Installing bash-completion..."
     echo $LINE
-    brew install bash-completion
+    brew install bash-completion@2
 fi
 
 brew list bash-git-prompt >> /dev/null
