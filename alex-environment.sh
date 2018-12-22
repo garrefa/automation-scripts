@@ -30,6 +30,13 @@ fi
 brew tap homebrew/cask
 brew tap caskroom/fonts
 
+brew cask list gpg-suite >> /dev/null
+if [ $(echo $?) == 1 ]; then
+    echo "Installing gpg-suite..."
+    echo $LINE
+    brew cask install gpg-suite
+fi
+
 brew cask list font-fira-code >> /dev/null
 if [ $(echo $?) == 1 ]; then
     echo "Installing FiraCode..."
