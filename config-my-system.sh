@@ -5,7 +5,10 @@
 # - Run brew doctor
 # - Run brew update
 # - Install coreutils
+# - Install gnu grep
+# - Install gnu sed
 # - Install bash updated version (4.*)
+# - Set new installed bash as your default shell
 # - Install git updated version (2.7)
 # - Install rbenv
 # - Add load rbenv code to .bash_profile, .profile and .zshrc
@@ -62,11 +65,27 @@ if [ $(echo $?) == 1 ]; then
     brew install coreutils
 fi
 
+brew list grep >> /dev/null
+if [ $(echo $?) == 1 ]; then
+    echo "Installing gnu grep..."
+    echo $LINE
+    brew install grep --with-default-names
+fi
+
+brew list gnu-sed >> /dev/null
+if [ $(echo $?) == 1 ]; then
+    echo "Installing gnu sed..."
+    echo $LINE
+    brew install gnu-sed --with-default-names
+fi
+
 brew list bash >> /dev/null
 if [ $(echo $?) == 1 ]; then
     echo "Installing updated bash..."
     echo $LINE
     brew install bash
+    sudo sed -i '/\/bin\/bash/i\/usr\/local\/bin\/bash' /etc/shells
+    chsh -s /usr/local/bin/bash
 fi
 
 brew list git >> /dev/null
