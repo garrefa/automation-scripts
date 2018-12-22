@@ -27,6 +27,13 @@ if [ $(echo $?) == 1 ]; then
     brew install bash-git-prompt
 fi
 
+brew list wget >> /dev/null
+if [ $(echo $?) == 1 ]; then
+    echo "Installing wget..."
+    echo $LINE
+    brew install wget
+fi
+
 brew tap homebrew/cask
 brew tap caskroom/fonts
 
@@ -58,10 +65,16 @@ if [ $(echo $?) == 1 ]; then
     brew cask install visual-studio-code
 fi
 
-echo "Downloading Darcula theme files to ~/darcula"
-wget https://github.com/bulenkov/Darcula/archive/master.zip -P $HOME/darcula-tmp
-unzip ~/darcula-tmp/master.zip -p ~/darcula-tmp >> /dev/null
-mv ~/darcula-tmp/Darcula-master ~/darcula >> /dev/null
-rm -rf ~/darcula-tmp >> /dev/null
+echo "Downloading Darcula theme files to ${HOME}/darcula"
 
-git clone git@github.com:garrefa/git-aliases.git ~/git-aliases
+wget https://github.com/bulenkov/Darcula/archive/master.zip \
+    -P "${HOME}/darcula-tmp"
+
+unzip "${HOME}/darcula-tmp/master.zip" \
+    -d "${HOME}/darcula-tmp" >> /dev/null
+
+mv "${HOME}/darcula-tmp/Darcula-master" "${HOME}/darcula" >> /dev/null
+
+rm -rf "${HOME}/darcula-tmp" >> /dev/null
+
+git clone git@github.com:garrefa/git-aliases.git "${HOME}/git-aliases"
