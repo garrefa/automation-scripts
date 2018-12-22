@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # This script will:
 # - Install bash-completion
@@ -59,7 +59,7 @@ if [ $(echo $?) == 1 ]; then
 fi
 
 echo "Downloading Darcula theme files to ~/darcula"
-wget https://github.com/bulenkov/Darcula/archive/master.zip -P ~/darcula-tmp
+wget https://github.com/bulenkov/Darcula/archive/master.zip -P $HOME/darcula-tmp
 unzip ~/darcula-tmp/master.zip -p ~/darcula-tmp >> /dev/null
 mv ~/darcula-tmp/Darcula-master ~/darcula >> /dev/null
 rm -rf ~/darcula-tmp >> /dev/null

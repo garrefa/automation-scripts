@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # This script will remove all the useless headers from Xcode .c, .h, .m and .swift files.
 #
